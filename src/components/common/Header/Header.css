@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 40px;
+  background-color: #f2f2f2;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+}
+
+.app-name {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-left: 10px;
+  letter-spacing: 3px;
+  background: linear-gradient(to right, #09a8ef, #0000008c, #f21a21);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.search-bar {
+  margin-right: 15px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.profile-icon img {
+  width: 40px; /* Adjust size as needed */
+  border-radius: 50%;
+}
+
+.left-container {
+  display: flex;
+  align-items: center;
+}
+
+.left-container:hover,
+.profile-icon:hover {
+  cursor: pointer;
+}
+
+.right-container {
+  display: flex;
+  align-items: center;
+}

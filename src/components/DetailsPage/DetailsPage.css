@@ -1,0 +1,44 @@
+.details-page-container {
+  display: flex;
+  padding: 20px;
+}
+
+.details-left-side {
+  width: 60%;
+  margin-right: 20px;
+}
+
+.details-left-side img {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+  /* margin-top: 20px; */
+}
+
+.details-left-side h2 {
+  margin-top: 20px;
+}
+
+.details-left-side p {
+  margin-top: 20px;
+}
+
+.details-right-side {
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+.photo-frame {
+  display: inline-block;
+  padding: 10px;
+  border: 10px solid;
+  width: 90%;
+  height: 50vh;
+}
+
+.photo {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
