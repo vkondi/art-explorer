@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import './DetailsPage.css';
 
@@ -8,40 +8,15 @@ import useGetDetailsData from '../../hooks/useGetDetailsData';
 import withContentWrapper from '../common/withContentWrapper/withContentWrapper';
 
 import { BASE_API_URL } from '../../utils/config';
-
-interface DetailsPageProps {
-  //   data: {
-  //     id: number;
-  //     title: string;
-  //     thumbnail: {
-  //       lqip: string;
-  //       alt_text: string;
-  //     };
-  //     main_reference_number: string;
-  //     artist_display: string;
-  //     place_of_origin: string;
-  //     artist_title: string;
-  //     gallery_title: string;
-  //     department_title: string;
-  //     date_display: string;
-  //     dimensions: string;
-  //     medium_display: string;
-  //     inscriptions: string;
-  //     credit_line: string;
-  //     catalogue_display: string;
-  //     edition: string;
-  //     color: string;
-  //     description: string;
-  //   };
-}
+import { DetailsPageProps } from '../../types/ComponentTypes';
 
 const DetailsPage: React.FC<DetailsPageProps> = () => {
   const { id } = useParams();
   const { data, loading, error } = useGetDetailsData({ url: BASE_API_URL, id: id as string });
 
-  useEffect(() => {
-    console.log('Details data: ', data);
-  }, [data]);
+  function removeHtmlTags(input: string): string {
+    return input.replace(/<[^>]*>/g, '');
+  }
 
   const Content = () => {
     return (
@@ -84,7 +59,7 @@ const DetailsPage: React.FC<DetailsPageProps> = () => {
               </p>
               <p>
                 <strong>Description: </strong>
-                {data?.description}
+                {removeHtmlTags(data?.description ?? '')}
               </p>
             </div>
             <div className="details-right-side">

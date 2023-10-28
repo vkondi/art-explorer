@@ -1,40 +1,16 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
+import './Dashboard.css';
 import Header from '../common/Header/Header';
 import ArtWorkCard from '../common/ArtWorkCard/ArtWorkCard';
 import Loader from '../common/Loader/Loader';
+import withContentWrapper from '../common/withContentWrapper/withContentWrapper';
 
 import useGetListData from '../../hooks/useGetListData';
 import { BASE_API_URL } from '../../utils/config';
-import withContentWrapper from '../common/withContentWrapper/withContentWrapper';
-
-interface ArtWorkData {
-  id: number;
-  title: string;
-  thumbnail: {
-    lqip: string;
-    alt_text: string;
-  };
-  main_reference_number: string;
-  artist_display: string;
-  description: string;
-  dimensions: string;
-  medium_display: string;
-  artist_title: string;
-  artwork_type_title: string;
-  department_title: string;
-}
-
-interface DashboardProps {
-  // artworks: ArtWorkData[];
-}
+import { ArtWorkData, DashboardProps } from '../../types/ComponentTypes';
 
 const Dashboard: React.FC<DashboardProps> = () => {
   const { data, loading, error } = useGetListData({ url: BASE_API_URL, queryParams: 'limit=10' });
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   const Content = () => {
     return (
@@ -42,7 +18,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
         {loading ? (
           <Loader />
         ) : (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
+          <div className="details-container">
             {data.map((artwork: ArtWorkData, index: number) => (
               <ArtWorkCard
                 id={artwork?.id}

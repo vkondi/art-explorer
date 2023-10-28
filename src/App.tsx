@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/Dashboard';
 import DetailsPage from './components/DetailsPage/DetailsPage';
 import ErrorBoundary from './components/common/ErrorBoundary/ErrorBoundary';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/details/:id" element={<DetailsPage />} />
-            {/*<Route path ="posts" element={<Posts />} /> */}
-            <Route path="*" element={<h1>Route does not exist</h1>} />
+
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
       </ErrorBoundary>
