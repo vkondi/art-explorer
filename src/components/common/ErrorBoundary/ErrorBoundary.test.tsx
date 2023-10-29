@@ -1,33 +1,33 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import ErrorBoundary from './ErrorBoundary';
 
 describe('ErrorBoundary', () => {
-  it('displays the error message when an error is thrown', () => {
-    const ErrorThrowingComponent = () => {
-      throw new Error('Test error');
-    };
-
-    render(
+  it('renders children when no error is caught', () => {
+    const { queryByText } = render(
       <ErrorBoundary>
-        <ErrorThrowingComponent />
+        <div>Test Content</div>
       </ErrorBoundary>
     );
 
-    const errorMessage = screen.getByText('Something went wrong.');
-    expect(errorMessage).toBeInTheDocument();
+    const testContent = queryByText('Test Content');
+    expect(testContent).toBeInTheDocument();
   });
 
-  it('displays the child component when there is no error', () => {
-    const DummyComponent = () => <div>Child Component</div>;
+  it('displays fallback UI when error is caught', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {}); // Prevents error logging from appearing in the test output
 
-    render(
+    const ChildComponent = () => {
+      throw new Error('Test Error');
+    };
+
+    const { queryByText } = render(
       <ErrorBoundary>
-        <DummyComponent />
+        <ChildComponent />
       </ErrorBoundary>
     );
 
-    const childComponent = screen.getByText('Child Component');
-    expect(childComponent).toBeInTheDocument();
+    const fallbackText = queryByText('Something went wrong.');
+    expect(fallbackText).toBeInTheDocument();
   });
 });

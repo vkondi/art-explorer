@@ -1,9 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
-import { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 import getListData from '../utils/testing/getListData';
-
-import axios from '../utils/axiosInterceptor';
 import { USE_LOCAL_DATA } from '../utils/config';
 
 const useGetListData = ({ url, queryParams }: { url: string; queryParams?: string }) => {

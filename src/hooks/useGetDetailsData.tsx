@@ -1,9 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
-import { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 import getDetailsData from '../utils/testing/getDetailsData';
-
-import axios from '../utils/axiosInterceptor';
 import { USE_LOCAL_DATA } from '../utils/config';
 
 const useGetDetailsData = ({ url, id }: { url: string; id: string }) => {

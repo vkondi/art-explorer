@@ -8,18 +8,16 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 
 function App() {
   return (
-    <React.StrictMode>
-      <ErrorBoundary>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/details/:id" element={<DetailsPage />} />
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
 
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </ErrorBoundary>
-    </React.StrictMode>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 
