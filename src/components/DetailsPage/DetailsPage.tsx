@@ -26,8 +26,6 @@ const DetailsPage: React.FC<DetailsPageProps> = () => {
         ) : (
           <div className="details-page-container">
             <div className="details-left-side">
-              {/* <img src={data?.thumbnail?.lqip} alt={data?.thumbnail?.alt_text} /> */}
-
               <div className="photo-frame">
                 <img
                   className="photo"
@@ -91,10 +89,6 @@ const DetailsPage: React.FC<DetailsPageProps> = () => {
                 <strong>Edition: </strong>
                 {data?.edition}
               </p>
-              {/* <p>
-              <strong>Color: </strong>
-              {data?.color}
-            </p> */}
             </div>
           </div>
         )}
