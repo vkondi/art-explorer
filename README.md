@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# ARTVERSE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Artverse is an application that allows users to explore various art collections from different parts of the world. It provides a user-friendly interface to browse through a wide range of artworks, providing details about each piece along with its historical significance.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Installation Steps
 
-### `npm start`
+To get started with Artverse, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Install dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm install` | `yarn install`
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Start the development server:
 
-### `npm run build`
+`npm start` | `yarn start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Artverse can be configured using the `config.ts` file. 
+- You have the option to enable the `USE_LOCAL_DATA` setting, which allows you to use local JSON data instead of making API requests.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Some Key Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Dashboard:** The dashboard presents a curated list of art collections in an interactive grid format, providing users with a glimpse of the various artworks available.
+- **Details Page:** This page offers users a detailed view of each artwork, showcasing the image along with other relevant information that helps in understanding its significance and context.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Note:** To run local unit tests, use the command `yarn test` or `npm test`.
